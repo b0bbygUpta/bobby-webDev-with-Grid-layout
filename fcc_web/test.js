@@ -1,12 +1,6 @@
 // #Added a button to delete all saved items
 
 let leads=[]
-// `["a","b","c"]`
-
-// leads=JSON.parse(leads)
-// leads.push("d")
-// leads=JSON.stringify(leads)
-// console.log("typeOf leads: "+ typeof leads)
 
 const inputEl=document.getElementById("input-el")
 const inputBtn=document.getElementById("input-btn")
@@ -15,6 +9,12 @@ const ulEl=document.getElementById("ul-el")
 const deleteBtn=document.getElementById("delete-btn")
 
 let leadsFromLocalStorage=JSON.parse(localStorage.getItem("leads"))
+
+const tabBtn=document.getElementById("tab-btn")
+
+const tabs=[
+    {url: "https://www.google.com/facebook.com"}
+]
 
 if(leadsFromLocalStorage){
     leads=leadsFromLocalStorage
@@ -28,6 +28,10 @@ if(leadsFromLocalStorage){
 // localStorage.clear()
 // console.log("testing localStorage: "+ localStorage.getItem("bobby"))
 
+tabBtn.addEventListener("click", function(){
+    console.log(tabs[0])
+
+})
 
 inputBtn.addEventListener("click", function(){
     // // console.log("Button clicked from addEvenetListener")
