@@ -1,16 +1,18 @@
-let data=[
-    {
-        player: "Jane",
-        score: 52
-    },
-    {
-        player: "Mark",
-        score: 41
+function generateSentence(desc,arr){
+    let baseString =`The ${arr.length} ${desc}`
+    const lastIndex=arr.length-1
+    for(let i=0;i<arr.length;i++){
+        if(i == lastIndex)
+            baseString+=arr[i]
+        else{
+            baseString+=arr[i]+","
+        }
     }
-]
+    return baseString
+}
 
-const janeBtn=document.getElementById("jane-btn")
+// const sentence=generateSentence("highest mountain",["Mount Everest", "K2"])
 
-janeBtn.addEventListener("click", function(){
-    console.log(data[0].score)
-})
+const sentence=generateSentence("first alphabets ", ["a","b","c","d","e","f","h"])
+
+console.log(sentence)
